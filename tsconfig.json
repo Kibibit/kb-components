@@ -24,6 +24,12 @@
       ],
       "kb-components/*": [
         "dist/kb-components/*"
+      ],
+      "@kibibit/kb-components": [
+        "dist/kibibit/kb-components"
+      ],
+      "@kibibit/kb-components/*": [
+        "dist/kibibit/kb-components/*"
       ]
     }
   }

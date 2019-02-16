@@ -3,41 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "kb-components": {
-      "root": "projects/kb-components",
-      "sourceRoot": "projects/kb-components/src",
-      "projectType": "library",
-      "prefix": "kb",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/kb-components/tsconfig.lib.json",
-            "project": "projects/kb-components/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/kb-components/src/test.ts",
-            "tsConfig": "projects/kb-components/tsconfig.spec.json",
-            "karmaConfig": "projects/kb-components/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/kb-components/tsconfig.lib.json",
-              "projects/kb-components/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "kb-component-docs": {
       "root": "projects/kb-component-docs/",
       "sourceRoot": "projects/kb-component-docs/src",
@@ -52,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/kb-component-docs",
+            "outputPath": "docs",
             "index": "projects/kb-component-docs/src/index.html",
             "main": "projects/kb-component-docs/src/main.ts",
             "polyfills": "projects/kb-component-docs/src/polyfills.ts",
@@ -168,7 +133,42 @@
           }
         }
       }
+    },
+    "@kibibit/kb-components": {
+      "root": "projects/kibibit/kb-components",
+      "sourceRoot": "projects/kibibit/kb-components/src",
+      "projectType": "library",
+      "prefix": "kb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/kibibit/kb-components/tsconfig.lib.json",
+            "project": "projects/kibibit/kb-components/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/kibibit/kb-components/src/test.ts",
+            "tsConfig": "projects/kibibit/kb-components/tsconfig.spec.json",
+            "karmaConfig": "projects/kibibit/kb-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/kibibit/kb-components/tsconfig.lib.json",
+              "projects/kibibit/kb-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "kb-components"
+  "defaultProject": "@kibibit/kb-components"
 }

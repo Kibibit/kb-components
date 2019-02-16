@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { KbComponentsModule } from 'kb-components';
+import { KbComponentsModule } from '@kibibit/kb-components';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
