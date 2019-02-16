@@ -14,7 +14,7 @@
     "package": "npm run build:lib && npm run build:lib:copy && npm run pack",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "docs": "replace 'href=\"favicon.ico\"' 'href=\"./favicon.ico\"' ./docs/index.html && replace '<href=\"styles' 'href=\"./styles' ./docs/index.html && replace 'src=\"' 'src=\"./' ./docs/index.html"
+    "docs": "ng build kb-component-docs --configuration=production"
   },
   "license": "MIT",
   "repository": {
