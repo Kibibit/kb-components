@@ -10,12 +10,13 @@
     "e2e": "ng e2e",
     "build:lib:copy": "copyfiles README.md LICENSE  ./projects/kibibit/kb-components/",
     "build:lib": "ng build @kibibit/kb-components",
-    "pack": "cd dist/kb-components && npm pack",
+    "pack": "cd dist/kibibit/kb-components && npm pack",
     "package": "npm run build:lib && npm run build:lib:copy && npm run pack",
     "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate"
+    "contributors:generate": "all-contributors generate",
+    "docs": "replace 'href=\"favicon.ico\"' 'href=\"./favicon.ico\"' ./docs/index.html && replace '<href=\"styles' 'href=\"./styles' ./docs/index.html && replace 'src=\"' 'src=\"./' ./docs/index.html"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Kibibit/kb-components"
@@ -60,6 +61,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^4.2.0",
     "protractor": "~5.4.0",
+    "replace": "^1.0.1",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
