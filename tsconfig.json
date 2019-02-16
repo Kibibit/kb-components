@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "kb-components": [
+        "dist/kb-components"
+      ],
+      "kb-components/*": [
+        "dist/kb-components/*"
+      ]
+    }
   }
 }

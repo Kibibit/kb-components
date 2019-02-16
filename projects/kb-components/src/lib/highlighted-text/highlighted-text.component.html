@@ -1,0 +1,6 @@
+<ng-container *ngFor="let section of textSections">
+  <ng-container *ngIf="section.match; else regular">
+    <mark>{{ section.text }}</mark>
+  </ng-container>
+  <ng-template #regular>{{ section.text }}</ng-template>
+</ng-container>
