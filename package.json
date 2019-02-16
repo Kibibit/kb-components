@@ -8,11 +8,20 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build:lib:copy": "copyfiles README.md LICENSE  ./projects/kb-components/",
     "build:lib": "ng build kb-components",
     "pack": "cd dist/kb-components && npm pack",
-    "package": "npm run build:lib && npm run pack"
+    "package": "npm run build:lib && npm run build:lib:copy && npm run pack",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
-  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kibibit/kb-components"
+  },
+  "homepage": "https://github.com/Kibibit/kb-components",
+  "private": false,
   "dependencies": {
     "@angular/animations": "~7.2.0",
     "@angular/cdk": "~7.3.2",
@@ -39,6 +48,7 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "all-contributors-cli": "^6.1.1",
     "codelyzer": "~4.5.0",
     "copyfiles": "^2.1.0",
     "jasmine-core": "~2.99.1",
