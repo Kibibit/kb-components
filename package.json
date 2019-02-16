@@ -1,6 +1,6 @@
 {
   "name": "kb-components",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,9 +9,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:lib:copy": "copyfiles README.md LICENSE  ./projects/kibibit/kb-components/",
+    "build:package-copy": "node ./copy-attributes.js",
     "build:lib": "ng build @kibibit/kb-components",
     "pack": "cd dist/kibibit/kb-components && npm pack",
-    "package": "npm run build:lib && npm run build:lib:copy && npm run pack",
+    "package": "npm run build:lib && npm run build:lib:copy && npm run build:package-copy && npm run pack",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "docs": "ng build kb-component-docs --configuration=production"
@@ -21,7 +22,7 @@
     "type": "git",
     "url": "https://github.com/Kibibit/kb-components"
   },
-  "homepage": "https://github.com/Kibibit/kb-components",
+  "homepage": "http://kibibit.io/kb-components/",
   "private": false,
   "dependencies": {
     "@angular/animations": "~7.2.0",
@@ -66,6 +67,7 @@
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.2.2"
+    "typescript": "~3.2.2",
+    "write-json-file": "^3.1.0"
   }
 }
