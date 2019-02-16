@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:lib:copy": "copyfiles README.md LICENSE  ./projects/kibibit/kb-components/",
-    "build:lib": "ng build kb-components",
+    "build:lib": "ng build @kibibit/kb-components",
     "pack": "cd dist/kb-components && npm pack",
     "package": "npm run build:lib && npm run build:lib:copy && npm run pack",
     "contributors:add": "all-contributors add",
