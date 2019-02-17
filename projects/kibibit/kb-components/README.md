@@ -31,12 +31,7 @@ export class AppModule { }
 
 ## Available Components
 
-Currently, we have the following components:
-- kb-highlighted-text
-  ```html
-  <kb-highlighted-text [needle]="searchTerm" [haystack]="content"></kb-highlighted-text>
-  ```
-  Will highlight search term inside some text content
+[See the docs for more information](http://kibibit.io/kb-components)
 
 # Development
 
