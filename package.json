@@ -12,7 +12,9 @@
     "build:package-copy": "node ./copy-attributes.js",
     "build:lib": "ng build @kibibit/kb-components",
     "pack": "cd dist/kibibit/kb-components && npm pack",
-    "package": "npm run build:lib && npm run build:lib:copy && npm run build:package-copy && npm run pack",
+    "build:rename": "renamer --find /kibibit-kb-components-.*\\.tgz/ --replace kibibit-kb-components.tgz ./dist/kibibit/kb-components/*",
+    "package": "npm run build:lib && npm run build:lib:copy && npm run build:package-copy && npm run pack && npm run build:rename",
+    "pub": "npm run package && npm publish ./dist/kibibit/kb-components/kibibit-kb-components.tgz",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "docs": "ng build kb-component-docs --configuration=production"
@@ -62,6 +64,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^4.2.0",
     "protractor": "~5.4.0",
+    "renamer": "^1.1.1",
     "replace": "^1.0.1",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.34.0",
