@@ -62,3 +62,9 @@ mat-card .hljs, .result {
   flex-direction: column;
   justify-content: center;
 }
+
+@media screen and (max-width: 450px) {
+  .title {
+    font-size: 0.6rem;
+  }
+}
