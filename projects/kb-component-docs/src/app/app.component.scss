@@ -4,4 +4,61 @@
 :host {
   font-family: 'Comfortaa', cursive;
   color: white;
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+}
+
+.version {
+  font-size: 0.3em;
+  height: 4em;
+  color: #E5B25A;
+
+  &:before {
+    content: 'v';
+  }
+}
+
+h1, .sub-title, .centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+.sub-title {
+  position: absolute;
+  font-size: 0.5em;
+  align-items: baseline;
+  top: calc(100% - 0.5em);
+  right: 0;
+}
+
+.centered {
+  flex-direction: column;
+  margin: 1em 0;
+}
+
+.kibibit-logo {
+  height: 1em;
+  margin-left: 0.5em;
+}
+
+mat-card .hljs, .result {
+  background: #212121;
+  padding: 0.5em;
+}
+
+.result {
+  margin: 1em 0px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
