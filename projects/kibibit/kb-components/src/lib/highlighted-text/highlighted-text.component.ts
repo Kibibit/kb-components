@@ -18,6 +18,18 @@ export class HighlightedTextComponent implements OnChanges {
   match() {
     let location = 0;
     this.textSections = [];
+
+    if (!this.needle) {
+      const onlySection = {
+        match: false,
+        text: this.haystack
+      };
+
+      this.textSections.push(onlySection);
+
+      return;
+    }
+
     if (this.needle && this.haystack) {
       const needle = String(this.needle);
       const haystack = String(this.haystack);

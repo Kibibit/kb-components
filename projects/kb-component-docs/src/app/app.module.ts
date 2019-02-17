@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 import { LogoComponent } from './logo/logo.component';
 
 import { HighlightModule } from 'ngx-highlightjs';
@@ -46,6 +47,7 @@ export function hljsLanguages() {
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatInputModule,
     HighlightModule.forRoot({
       languages: hljsLanguages
     })

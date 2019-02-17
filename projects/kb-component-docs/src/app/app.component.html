@@ -33,8 +33,18 @@
           <pre><code [highlight]="highlightTS"></code></pre>
           RESULT
           <div class="result">
-            <kb-highlighted-text [needle]="'hello'"
-                                 [haystack]="'This is a nice hello world text. this is case insensitive: Hello'">
+            <form class="example-form"
+                  autocomplete="off">
+              <mat-form-field class="example-full-width">
+                <input matInput
+                       placeholder="Search Term"
+                       value="hello"
+                       (keyup)="0"
+                       #searchTerm>
+              </mat-form-field>
+            </form>
+            <kb-highlighted-text [needle]="searchTerm.value"
+                                 [haystack]="content">
             </kb-highlighted-text>
           </div>
         </div>
