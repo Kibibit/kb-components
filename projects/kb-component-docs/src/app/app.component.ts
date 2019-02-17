@@ -5,6 +5,9 @@ import { Chance } from 'chance';
 import { MatMenuTrigger } from '@angular/material';
 import { from } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import * as _moment from 'moment';
+
+const moment = _moment;
 
 @Component({
   selector: 'kb-docs-root',
@@ -16,6 +19,9 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('search') search: ElementRef;
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
+  oldDate1 = moment().subtract(moment.duration(3, 'minutes'));
+  oldDate2 = moment().subtract(moment.duration(10, 'hours'));
+  oldDate3 = moment().subtract(moment.duration(6, 'days'));
   notifications: any[] = [];
   version: string = environment.VERSION;
   title = 'kb-components';
@@ -24,6 +30,18 @@ export class AppComponent implements AfterViewInit {
     'the sections matching the searchTerm (initially: hello). It is case insensitive',
     'so it should find all the instances regardless'
   ].join(' ');
+  timeAgoPipeHTML = `
+<div class="date">{{ oldDate1 | timeAgo }}</div>
+<div class="date">{{ oldDate2 | timeAgo }}</div>
+<div class="date">{{ oldDate3 | timeAgo }}</div>
+  `.trim();
+  timeAgoPipeTS = `
+export class AppComponent {
+  oldDate1 = moment().subtract(moment.duration(3, 'minutes'));
+  oldDate2 = moment().subtract(moment.duration(10, 'hours'));
+  oldDate3 = moment().subtract(moment.duration(6, 'days'));
+}
+    `.trim();
   highlightHTML = `
 <form class="example-form"
       autocomplete="off">

@@ -76,6 +76,28 @@
   </mat-card>
   <mat-card>
     <mat-card-header>
+      <mat-card-title>TimeAgoPipe</mat-card-title>
+      <mat-card-subtitle>Takes a date and shows it's value as a distance from 'now'.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card class="mat-elevation-z8">
+        <div>
+          HTML
+          <pre><code [highlight]="timeAgoPipeHTML"></code></pre>
+          TS
+          <pre><code [highlight]="timeAgoPipeTS"></code></pre>
+          RESULT
+          <div class="result">
+            <div class="date">{{ oldDate1 | timeAgo }}</div>
+            <div class="date">{{ oldDate2 | timeAgo }}</div>
+            <div class="date">{{ oldDate3 | timeAgo }}</div>
+          </div>
+        </div>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
       <mat-card-title>NotificationsService</mat-card-title>
       <mat-card-subtitle>Saves notification as a capped collection in indexedDB.</mat-card-subtitle>
     </mat-card-header>
@@ -90,7 +112,7 @@
           <pre><code [highlight]="kbNotificationsTS"></code></pre>
           RESULT
           <div class="result"
-               style="background-color: #424242; align-items: center;">
+               style="align-items: center;">
             <button mat-raised-button
                     kbElevation
                     color="primary"
