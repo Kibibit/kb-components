@@ -380,6 +380,14 @@ MIT
 
 @angular/material/card
 
+@angular/animations
+MIT
+
+@angular/material/form-field
+
+@angular/forms
+MIT
+
 @kibibit/kb-components
 MIT
 MIT License
@@ -406,12 +414,6 @@ SOFTWARE.
 
 
 @angular/material/toolbar
-
-@angular/animations
-MIT
-
-@angular/forms
-MIT
 
 zone.js
 MIT
