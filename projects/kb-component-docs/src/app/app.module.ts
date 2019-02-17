@@ -18,6 +18,7 @@ import { HighlightModule } from 'ngx-highlightjs';
 import xml from 'highlight.js/lib/languages/xml';
 import scss from 'highlight.js/lib/languages/scss';
 import typescript from 'highlight.js/lib/languages/typescript';
+import { MatMenuModule } from '@angular/material/menu'
 
 /**
  * Import every language you wish to highlight here
@@ -48,6 +49,7 @@ export function hljsLanguages() {
     MatListModule,
     MatCardModule,
     MatInputModule,
+    MatMenuModule,
     HighlightModule.forRoot({
       languages: hljsLanguages
     })

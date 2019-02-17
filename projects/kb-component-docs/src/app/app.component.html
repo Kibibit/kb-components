@@ -33,8 +33,7 @@
           <pre><code [highlight]="highlightTS"></code></pre>
           RESULT
           <div class="result">
-            <form class="example-form"
-                  autocomplete="off">
+            <form autocomplete="off">
               <mat-form-field class="example-full-width">
                 <input matInput
                        placeholder="Search Term"
@@ -70,6 +69,60 @@
                  kbElevation
                  raisedElevation="16">
             </div>
+          </div>
+        </div>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>NotificationsService</mat-card-title>
+      <mat-card-subtitle>Saves notification as a capped collection in indexedDB.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card class="mat-elevation-z8">
+        <div>
+          HTML
+          <pre><code [highlight]="kbNotificationsHTML"></code></pre>
+          CSS
+          <pre><code [highlight]="kbNotificationsCSS"></code></pre>
+          TS
+          <pre><code [highlight]="kbNotificationsTS"></code></pre>
+          RESULT
+          <div class="result"
+               style="background-color: #424242; align-items: center;">
+            <button mat-raised-button
+                    kbElevation
+                    color="primary"
+                    (click)="addNotification()">Generate Notification</button>
+
+            <button mat-button
+                    disabled="disabled">
+              <i class="material-icons">
+                notifications
+              </i>
+            </button>
+            <mat-list role="list"
+                      class="notifications">
+              <mat-list-item role="listitem"
+                             class="kb-notification"
+                             [class.added]="notification.class === 'added'"
+                             *ngFor="let notification of notifications">
+                <span style="display: flex;">
+                  <ng-container [ngSwitch]="notification.type">
+                    <mat-icon *ngSwitchCase="'created'">create_new_folder</mat-icon>
+                    <mat-icon *ngSwitchCase="'starred'">folder_special</mat-icon>
+                    <mat-icon *ngSwitchDefault>notification_important</mat-icon>
+                  </ng-container>
+                  <span style="white-space: normal;">{{ notification.title }}</span>
+                </span>
+                <div class="date">{{ notification.created | timeAgo }}</div>
+              </mat-list-item>
+              <mat-list-item role="listitem"
+                             *ngIf="notifications.length === 0">
+                No notifications yet
+              </mat-list-item>
+            </mat-list>
           </div>
         </div>
       </mat-card>
