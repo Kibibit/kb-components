@@ -9,15 +9,32 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   version: string = environment.VERSION;
   title = 'kb-components';
-  html = `
+  highlightHTML = `
 <kb-highlighted-text [needle]="searchTerm"
                      [haystack]="content">
 </kb-highlighted-text>
   `.trim();
-  ts = `
+  highlightTS = `
 export class AppComponent {
   searchTerm = 'hello';
   content = 'This is a nice hello world text. this is case insensitive: Hello';
+}
+  `.trim();
+  kbElevationHTML = `
+<div class="red-box"
+     kbElevation
+     raisedElevation="16">
+</div>
+  `.trim();
+  kbElevationCSS = `
+.red-box {
+  width: 4em;
+  height: 4em;
+  background: red;
+  margin: 0 1em;
+
+  /* important for animation between states */
+  transition: all 250ms;
 }
   `.trim();
   install = 'npm install --save @kibibit/kb-components';

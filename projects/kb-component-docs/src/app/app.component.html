@@ -1,42 +1,110 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="centered title">
-  <h1>
-    <kb-docs-logo></kb-docs-logo>{{ title }}
-    <span class="version">{{ version }}</span>
-    <div class="sub-title">
+<div class="middle-site">
+  <div class="centered title">
+    <h1>
+      <kb-docs-logo></kb-docs-logo>{{ title }}
+      <span class="version">{{ version }}</span>
+      <div class="sub-title">
+        by
+        <img class="kibibit-logo"
+             alt="kibibit logo"
+             src="http://kibibit.io/kibibit-assets/SVG/long-white.svg">
+      </div>
+    </h1>
+  </div>
+  <p>Common components in the kibibit code base</p>
+  <h2>Setup</h2>
+  <h3>Installation</h3>
+  <pre><code [highlight]="install"></code></pre>
+  <h3>Import</h3>
+  <pre><code [highlight]="include"></code></pre>
+  <h2>Components</h2>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>HighlightedTextComponent</mat-card-title>
+      <mat-card-subtitle>highlights a search term inside a string of text</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card class="mat-elevation-z8">
+        <div>
+          HTML
+          <pre><code [highlight]="highlightHTML"></code></pre>
+          TS
+          <pre><code [highlight]="highlightTS"></code></pre>
+          RESULT
+          <div class="result">
+            <kb-highlighted-text [needle]="'hello'"
+                                 [haystack]="'This is a nice hello world text. this is case insensitive: Hello'">
+            </kb-highlighted-text>
+          </div>
+        </div>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>ElevationDirective</mat-card-title>
+      <mat-card-subtitle>Directive to apply Angular Material elevation classes on hover</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card class="mat-elevation-z8">
+        <div>
+          HTML
+          <pre><code [highlight]="kbElevationHTML"></code></pre>
+          CSS
+          <pre><code [highlight]="kbElevationCSS"></code></pre>
+          RESULT
+          <div class="result"
+               style="background-color: #424242">
+            <div class="red-box"
+                 kbElevation
+                 raisedElevation="16">
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+</div>
+<mat-toolbar class="footer">
+  <div class="footer-row">
+    <a class="wrapper"
+       href="https://github.com/kibibit"
+       target="_blank">
+      <i class="material-icons">
+        code
+      </i>
+      with
+      <i class="material-icons heart">
+        favorite
+      </i>
       by
       <img class="kibibit-logo"
-           alt="Angular Logo"
+           alt="kibibit logo"
            src="http://kibibit.io/kibibit-assets/SVG/long-white.svg">
-    </div>
-  </h1>
-</div>
-<p>Common components in the kibibit code base</p>
-<h2>Setup</h2>
-<h3>Installation</h3>
-<pre><code [highlight]="install"></code></pre>
-<h3>Import</h3>
-<pre><code [highlight]="include"></code></pre>
-<h2>Components</h2>
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>kb-highlighted-text</mat-card-title>
-    <mat-card-subtitle>highlights a search term inside a string of text</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-card class="mat-elevation-z8">
-      <div>
-        HTML
-        <pre><code [highlight]="html"></code></pre>
-        TS
-        <pre><code [highlight]="ts"></code></pre>
-        RESULT
-        <div class="result">
-          <kb-highlighted-text [needle]="'hello'"
-                               [haystack]="'This is a nice hello world text. this is case insensitive: Hello'">
-          </kb-highlighted-text>
-        </div>
-      </div>
-    </mat-card>
-  </mat-card-content>
-</mat-card>
+    </a>
+  </div>
+  <div class="footer-row sub">The source code is licensed&nbsp;
+    <a href="https://github.com/Kibibit/kb-components/blob/master/LICENSE"
+       target="_blank">
+      MIT
+    </a>
+    .
+  </div>
+  <div class="footer-row social">
+    <a href="https://github.com/Kibibit/kb-components"
+       kbElevation
+       raisedElevation="13"
+       target="_blank"
+       alt="GitHub Repository">
+      <img src="https://img.shields.io/badge/github-repository-blue.svg?style=for-the-badge&logo=github" />
+    </a>
+    <a href="https://www.npmjs.com/package/@kibibit/kb-components"
+       kbElevation
+       raisedElevation="13"
+       target="_blank"
+       alt="npm package">
+      <img src="https://img.shields.io/npm/v/@kibibit/kb-components.svg?style=for-the-badge&logo=npm&colorB=CC3534" />
+    </a>
+  </div>
+</mat-toolbar>

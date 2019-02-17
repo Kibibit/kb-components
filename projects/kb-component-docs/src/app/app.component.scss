@@ -1,7 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
+.heart {
+  color: #D1353E;
+}
 
-:host {
+.red-box {
+  width: 4em;
+  height: 4em;
+  background: #D1353E;
+  transition: all 250ms;
+  margin: 0 1em;
+}
+
+mat-card {
+  margin-bottom: 2em;
+}
+
+.middle-site {
   font-family: 'Comfortaa', cursive;
   color: white;
   max-width: 900px;
@@ -61,6 +76,52 @@ mat-card .hljs, .result {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.footer {
+  margin-top: 2em;
+  min-height: 200px;
+  flex-direction: column;
+  font-family: 'Comfortaa', cursive;
+  // background-color: #E5B25A;
+
+  .kibibit-logo {
+    margin-bottom: 0.3em;
+  }
+
+  .social {
+    a {
+      margin-right: 1em;
+      height: 28px;
+      transition: all 250ms;
+    }
+  }
+
+  i {
+    margin: 0 0.2em;
+  }
+
+  .footer-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+
+    &.sub {
+      font-size: 0.8em;
+    }
+
+    > a.wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
 }
 
 @media screen and (max-width: 550px) {
