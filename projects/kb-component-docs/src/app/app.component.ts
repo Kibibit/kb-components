@@ -22,7 +22,7 @@ export class AppComponent {
   `.trim();
   install = 'npm install --save @kibibit/kb-components';
   include = `
-/ *.module.ts
+// *.module.ts
 // ...
 import { KbComponentsModule } from '@kibibit/kb-components';
 

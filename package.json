@@ -17,7 +17,7 @@
     "pub": "npm run package && npm publish ./dist/kibibit/kb-components/kibibit-kb-components.tgz",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "docs": "ng build kb-component-docs --configuration=production"
+    "docs": "ng build kb-component-docs --configuration=production --aot"
   },
   "license": "MIT",
   "repository": {
