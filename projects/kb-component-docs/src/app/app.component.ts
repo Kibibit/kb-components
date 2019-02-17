@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
   version: string = environment.VERSION;
-  title = 'kb-component';
+  title = 'kb-components';
   html = `
 <kb-highlighted-text [needle]="searchTerm"
                      [haystack]="content">
