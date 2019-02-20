@@ -19,160 +19,92 @@
   <h3>Import</h3>
   <pre><code [highlight]="include"></code></pre>
   <h2>Components</h2>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>HighlightedTextComponent</mat-card-title>
-      <mat-card-subtitle>highlights a search term inside a string of text</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-card class="mat-elevation-z8">
-        <div>
-          HTML
-          <pre><code [highlight]="highlightHTML"></code></pre>
-          TS
-          <pre><code [highlight]="highlightTS"></code></pre>
-          RESULT
-          <div class="result">
-            <form autocomplete="off">
-              <mat-form-field class="example-full-width">
-                <input matInput
-                       placeholder="Search Term"
-                       value="hello"
-                       (keyup)="0"
-                       #searchTerm>
-              </mat-form-field>
-            </form>
-            <kb-highlighted-text [needle]="searchTerm.value"
-                                 [haystack]="content">
-            </kb-highlighted-text>
-          </div>
-        </div>
-      </mat-card>
-    </mat-card-content>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>ElevationDirective</mat-card-title>
-      <mat-card-subtitle>Directive to apply Angular Material elevation classes on hover</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-card class="mat-elevation-z8">
-        <div>
-          HTML
-          <pre><code [highlight]="kbElevationHTML"></code></pre>
-          CSS
-          <pre><code [highlight]="kbElevationCSS"></code></pre>
-          RESULT
-          <div class="result"
-               style="background-color: #424242">
-            <div class="red-box"
-                 kbElevation
-                 raisedElevation="16">
-            </div>
-          </div>
-        </div>
-      </mat-card>
-    </mat-card-content>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>TimeAgoPipe</mat-card-title>
-      <mat-card-subtitle>Takes a date and shows it's value as a distance from 'now'.</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-card class="mat-elevation-z8">
-        <div>
-          HTML
-          <pre><code [highlight]="timeAgoPipeHTML"></code></pre>
-          TS
-          <pre><code [highlight]="timeAgoPipeTS"></code></pre>
-          RESULT
-          <div class="result">
-            <div class="date">{{ oldDate1 | timeAgo }}</div>
-            <div class="date">{{ oldDate2 | timeAgo }}</div>
-            <div class="date">{{ oldDate3 | timeAgo }}</div>
-          </div>
-        </div>
-      </mat-card>
-    </mat-card-content>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>NotificationsService</mat-card-title>
-      <mat-card-subtitle>Saves notification as a capped collection in indexedDB.</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-card class="mat-elevation-z8">
-        <div>
-          HTML
-          <pre><code [highlight]="kbNotificationsHTML"></code></pre>
-          CSS
-          <pre><code [highlight]="kbNotificationsCSS"></code></pre>
-          TS
-          <pre><code [highlight]="kbNotificationsTS"></code></pre>
-          RESULT
-          <div class="result"
-               style="align-items: center;">
-            <button mat-raised-button
-                    kbElevation
-                    color="primary"
-                    (click)="addNotification()">Generate Notification</button>
+  <kb-docs-example-card [title]="documentedComponents.HighlightedTextComponent.title"
+                        [description]="documentedComponents.HighlightedTextComponent.description"
+                        [exampleName]="documentedComponents.HighlightedTextComponent.exampleName">
+    <div class="result">
+      <form autocomplete="off">
+        <mat-form-field class="example-full-width">
+          <input matInput
+                 placeholder="Search Term"
+                 value="hello"
+                 (keyup)="0"
+                 #searchTerm>
+        </mat-form-field>
+      </form>
+      <kb-highlighted-text [needle]="searchTerm.value"
+                           [haystack]="content">
+      </kb-highlighted-text>
+    </div>
+  </kb-docs-example-card>
+  <kb-docs-example-card [title]="documentedComponents.ElevationDirective.title"
+                        [description]="documentedComponents.ElevationDirective.description"
+                        [exampleName]="documentedComponents.ElevationDirective.exampleName">
+    <div class="result"
+         style="background-color: #424242">
+      <div class="red-box"
+           kbElevation
+           raisedElevation="16">
+      </div>
+    </div>
+  </kb-docs-example-card>
+  <kb-docs-example-card [title]="documentedComponents.NotificationsService.title"
+                        [description]="documentedComponents.NotificationsService.description"
+                        [exampleName]="documentedComponents.NotificationsService.exampleName">
+    <div class="result"
+         style="align-items: center;">
+      <button mat-raised-button
+              kbElevation
+              color="primary"
+              (click)="addNotification()">Generate Notification</button>
 
-            <button mat-button
-                    disabled="disabled">
-              <i class="material-icons">
-                notifications
-              </i>
-            </button>
-            <mat-list role="list"
-                      class="notifications">
-              <mat-list-item role="listitem"
-                             class="kb-notification"
-                             [class.added]="notification.class === 'added'"
-                             *ngFor="let notification of notifications">
-                <span style="display: flex;">
-                  <ng-container [ngSwitch]="notification.type">
-                    <mat-icon *ngSwitchCase="'created'">create_new_folder</mat-icon>
-                    <mat-icon *ngSwitchCase="'starred'">folder_special</mat-icon>
-                    <mat-icon *ngSwitchDefault>notification_important</mat-icon>
-                  </ng-container>
-                  <span style="white-space: normal;">{{ notification.title }}</span>
-                </span>
-                <div class="date">{{ notification.created | timeAgo }}</div>
-              </mat-list-item>
-              <mat-list-item role="listitem"
-                             *ngIf="notifications.length === 0">
-                No notifications yet
-              </mat-list-item>
-            </mat-list>
-          </div>
-        </div>
-      </mat-card>
-    </mat-card-content>
-  </mat-card>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>SingleObjectKey</mat-card-title>
-      <mat-card-subtitle>a pipe to always get the first object attribute. <strong>ALIAS: SingleError</strong>
-      </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-card class="mat-elevation-z8">
-        <div>
-          HTML
-          <pre><code [highlight]="singleObjectKeyHTML"></code></pre>
-          TS
-          <pre><code [highlight]="singleObjectKeyTS"></code></pre>
-          RESULT
-          <div class="result"
-               style="align-items: center;">
-            <div>{{ formFieldErrors | kbSingleObjectKey }}</div>
-            <div>{{ formFieldErrors | kbSingleError }}</div>
-          </div>
-        </div>
-      </mat-card>
-    </mat-card-content>
-  </mat-card>
+      <button mat-button
+              disabled="disabled">
+        <i class="material-icons">
+          notifications
+        </i>
+      </button>
+      <mat-list role="list"
+                class="notifications">
+        <mat-list-item role="listitem"
+                       class="kb-notification"
+                       [class.added]="notification.class === 'added'"
+                       *ngFor="let notification of notifications">
+          <span style="display: flex;">
+            <ng-container [ngSwitch]="notification.type">
+              <mat-icon *ngSwitchCase="'created'">create_new_folder</mat-icon>
+              <mat-icon *ngSwitchCase="'starred'">folder_special</mat-icon>
+              <mat-icon *ngSwitchDefault>notification_important</mat-icon>
+            </ng-container>
+            <span style="white-space: normal;">{{ notification.title }}</span>
+          </span>
+          <div class="date">{{ notification.created | timeAgo }}</div>
+        </mat-list-item>
+        <mat-list-item role="listitem"
+                       *ngIf="notifications.length === 0">
+          No notifications yet
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </kb-docs-example-card>
+  <kb-docs-example-card [title]="documentedComponents.TimeAgoPipe.title"
+                        [description]="documentedComponents.TimeAgoPipe.description"
+                        [exampleName]="documentedComponents.TimeAgoPipe.exampleName">
+    <div class="result">
+      <div class="date">{{ oldDate1 | timeAgo }}</div>
+      <div class="date">{{ oldDate2 | timeAgo }}</div>
+      <div class="date">{{ oldDate3 | timeAgo }}</div>
+    </div>
+  </kb-docs-example-card>
+  <kb-docs-example-card [title]="documentedComponents.SingleObjectKeyPipe.title"
+                        [description]="documentedComponents.SingleObjectKeyPipe.description"
+                        [exampleName]="documentedComponents.SingleObjectKeyPipe.exampleName">
+    <div class="result"
+         style="align-items: center;">
+      <div>{{ formFieldErrors | kbSingleObjectKey }}</div>
+      <div>{{ formFieldErrors | kbSingleError }}</div>
+    </div>
+  </kb-docs-example-card>
 </div>
 <mat-toolbar class="footer">
   <div class="footer-row">
