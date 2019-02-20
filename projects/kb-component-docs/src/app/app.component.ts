@@ -22,9 +22,15 @@ export class AppComponent implements AfterViewInit {
   oldDate1 = moment().subtract(moment.duration(3, 'minutes'));
   oldDate2 = moment().subtract(moment.duration(10, 'hours'));
   oldDate3 = moment().subtract(moment.duration(6, 'days'));
+  formFieldErrors = { required: true, pattern: true };
   notifications: any[] = [];
   version: string = environment.VERSION;
   title = 'kb-components';
+  singleObjectKeyHTML = `
+<div>{{ formFieldErrors | kbSingleObjectKey }}</div>
+<div>{{ formFieldErrors | kbSingleError }}</div>
+  `.trim();
+  singleObjectKeyTS = 'formFieldErrors = { required: true, pattern: true };';
   content = [
     'Hello there! This kb-highlighted-text should highlight all',
     'the sections matching the searchTerm (initially: hello). It is case insensitive',
