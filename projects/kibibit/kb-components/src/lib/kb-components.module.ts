@@ -3,12 +3,14 @@ import { HighlightedTextComponent } from './highlighted-text/highlighted-text.co
 import { CommonModule } from '@angular/common';
 import { ElevationDirective } from './kb-elevation/kb-elevation.directive';
 import { TimeAgoPipe } from './time-ago/time-ago.pipe';
+import { SingleObjectKeyPipe } from './single-object-key/single-object-key.pipe';
+import { SingleErrorPipe } from './single-error/single-error.pipe';
 
 @NgModule({
-  declarations: [HighlightedTextComponent, ElevationDirective, TimeAgoPipe],
+  declarations: [HighlightedTextComponent, ElevationDirective, TimeAgoPipe, SingleObjectKeyPipe, SingleErrorPipe],
   imports: [
     CommonModule
   ],
-  exports: [HighlightedTextComponent, ElevationDirective, TimeAgoPipe]
+  exports: [HighlightedTextComponent, ElevationDirective, TimeAgoPipe, SingleObjectKeyPipe, SingleErrorPipe]
 })
 export class KbComponentsModule { }

@@ -150,6 +150,29 @@
       </mat-card>
     </mat-card-content>
   </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>SingleObjectKey</mat-card-title>
+      <mat-card-subtitle>a pipe to always get the first object attribute. <strong>ALIAS: SingleError</strong>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card class="mat-elevation-z8">
+        <div>
+          HTML
+          <pre><code [highlight]="singleObjectKeyHTML"></code></pre>
+          TS
+          <pre><code [highlight]="singleObjectKeyTS"></code></pre>
+          RESULT
+          <div class="result"
+               style="align-items: center;">
+            <div>{{ formFieldErrors | kbSingleObjectKey }}</div>
+            <div>{{ formFieldErrors | kbSingleError }}</div>
+          </div>
+        </div>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
 </div>
 <mat-toolbar class="footer">
   <div class="footer-row">
