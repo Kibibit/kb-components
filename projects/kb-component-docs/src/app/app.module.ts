@@ -21,6 +21,7 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import { MatMenuModule } from '@angular/material/menu';
 import { ExampleCardComponent } from './example-card/example-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /**
  * Import every language you wish to highlight here
@@ -54,6 +55,8 @@ export function hljsLanguages() {
     MatCardModule,
     MatInputModule,
     MatMenuModule,
+    FormsModule,
+    ReactiveFormsModule,
     HighlightModule.forRoot({
       languages: hljsLanguages
     })

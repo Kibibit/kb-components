@@ -2,12 +2,20 @@ import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { environment } from '../environments/environment';
 import { CreateNotification, NotificationsService } from '@kibibit/kb-components';
 import { Chance } from 'chance';
-import { MatMenuTrigger } from '@angular/material';
+import { MatMenuTrigger, ErrorStateMatcher } from '@angular/material';
 import { from } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import * as _moment from 'moment';
+import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 
 const moment = _moment;
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'kb-docs-root',
@@ -18,6 +26,13 @@ export class AppComponent implements AfterViewInit {
   private chance = new Chance();
   @ViewChild('search') search: ElementRef;
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
+  matcher = new MyErrorStateMatcher();
 
   oldDate1 = moment().subtract(moment.duration(3, 'minutes'));
   oldDate2 = moment().subtract(moment.duration(10, 'hours'));

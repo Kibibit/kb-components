@@ -99,10 +99,25 @@
   <kb-docs-example-card [title]="documentedComponents.SingleObjectKeyPipe.title"
                         [description]="documentedComponents.SingleObjectKeyPipe.description"
                         [exampleName]="documentedComponents.SingleObjectKeyPipe.exampleName">
-    <div class="result"
-         style="align-items: center;">
-      <div>{{ formFieldErrors | kbSingleObjectKey }}</div>
-      <div>{{ formFieldErrors | kbSingleError }}</div>
+    <div class="result">
+      <form class="example-form"
+            autocomplete="off">
+        <mat-form-field class="example-full-width">
+          <input matInput
+                 placeholder="Email"
+                 [formControl]="emailFormControl"
+                 [errorStateMatcher]="matcher">
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error [ngSwitch]="(emailFormControl.errors | kbSingleError)">
+            <ng-container *ngSwitchCase="'required'">
+              Email is <strong>required</strong>
+            </ng-container>
+            <ng-container *ngSwitchCase="'email'">
+              Please enter a valid email address
+            </ng-container>
+          </mat-error>
+        </mat-form-field>
+      </form>
     </div>
   </kb-docs-example-card>
 </div>

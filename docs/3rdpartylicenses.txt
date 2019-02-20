@@ -399,6 +399,9 @@ MIT
 @angular/platform-browser
 MIT
 
+@angular/forms
+MIT
+
 @angular/cdk
 MIT
 The MIT License
@@ -450,9 +453,6 @@ THE SOFTWARE.
 
 
 @angular/material/icon
-
-@angular/forms
-MIT
 
 @angular/animations
 MIT
