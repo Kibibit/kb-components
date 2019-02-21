@@ -1,0 +1,26 @@
+<mat-card class="mat-elevation-z5">
+  <mat-card-header>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-subtitle>{{ description }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- <mat-card class="mat-elevation-z8"> -->
+    <mat-tab-group class="code-example mat-elevation-z5">
+      <mat-tab label="HTML"
+               *ngIf="exampleHTML">
+        <pre><code [highlight]="exampleHTML"></code></pre>
+      </mat-tab>
+      <mat-tab label="TS"
+               *ngIf="exampleTS">
+        <pre><code [highlight]="exampleTS"></code></pre>
+      </mat-tab>
+      <mat-tab label="CSS"
+               *ngIf="exampleSCSS">
+        <pre><code [highlight]="exampleSCSS"></code></pre>
+      </mat-tab>
+    </mat-tab-group>
+    <div class="mat-elevation-z5 demo">
+      <ng-content></ng-content>
+    </div>
+  </mat-card-content>
+</mat-card>

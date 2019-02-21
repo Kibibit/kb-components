@@ -4,11 +4,11 @@ import { forkJoin, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Component({
-  selector: 'kb-docs-example-card',
-  templateUrl: './example-card.component.html',
-  styleUrls: ['./example-card.component.scss']
+  selector: 'kb-code-example-card',
+  templateUrl: './code-example-card.component.html',
+  styleUrls: ['./code-example-card.component.scss']
 })
-export class ExampleCardComponent implements OnInit, OnChanges {
+export class CodeExampleCardComponent implements OnInit, OnChanges {
 
   @Input()
   exampleName = '';

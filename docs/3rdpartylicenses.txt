@@ -695,6 +695,8 @@ SOFTWARE.
 ngx-highlightjs
 MIT
 
+@angular/material/tabs
+
 @angular/material/card
 
 @angular/material/form-field
