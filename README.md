@@ -5,6 +5,9 @@
   </h2>
 </p>
 <p align="center">
+  <a href="https://www.npmjs.com/package/@kibibit/kb-components"><img src="https://img.shields.io/github/package-json/v/kibibit/kb-components.svg?logo=npm&color=CB3837&style=for-the-badge"></a>
+</p>
+<p align="center">
   <a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg"></a>
   <a href="https://greenkeeper.io/"><img src="https://img.shields.io/badge/greenkeeper-enabled-brightgreen.svg"></a>
   <a href="https://travis-ci.org/Kibibit/kb-components"><img src="https://travis-ci.org/Kibibit/kb-components.svg?branch=master"></a>
