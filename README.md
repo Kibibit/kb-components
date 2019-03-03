@@ -13,7 +13,7 @@
   <a href="https://travis-ci.org/Kibibit/kb-components"><img src="https://travis-ci.org/Kibibit/kb-components.svg?branch=master"></a>
   <a href="https://coveralls.io/github/Kibibit/kb-components?branch=master"><img src="https://coveralls.io/repos/github/Kibibit/kb-components/badge.svg?branch=master"></a>
   <a href="#contributors"><img src="https://img.shields.io/badge/all_contributors-1-orange.svg"></a>
-  <a href="https://salt.bountysource.com/teams/kibibit"><img src="https://img.shields.io/endpoint.svg?url=https://monthly-salt.now.sh&style=flat-square"></a>
+  <a href="https://salt.bountysource.com/teams/kibibit"><img src="https://img.shields.io/endpoint.svg?url=https://monthly-salt.now.sh/kibibit&style=flat-square"></a>
 </p>
 <p align="center">
   A library of common angular 6+ components in kibibit's projects
