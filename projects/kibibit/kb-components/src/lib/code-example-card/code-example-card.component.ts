@@ -31,7 +31,7 @@ export class CodeExampleCardComponent implements OnInit, OnChanges {
     console.log('prev exampleName: ', exampleName.previousValue);
     console.log('got exampleName: ', exampleName.currentValue);
 
-    const url = `http://kibibit.io/kb-components-examples/${exampleName.currentValue}`;
+    const url = `https://kibibit.io/kb-components-examples/${exampleName.currentValue}`;
 
     forkJoin(
       this.http.get<string>(`${url}/html.html`, { responseType: 'text' as 'json' }).pipe(catchError((err) => of(''))),
